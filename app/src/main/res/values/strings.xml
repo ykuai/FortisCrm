@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Fortiscrm</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">用户帐号</string>
+    <string name="prompt_password">用户密码</string>
+    <string name="action_sign_in">登录</string>
+    <string name="action_sign_in_short">登录</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">账号不能为空</string>
+    <string name="invalid_password">密码不能为空</string>
+    <string name="login_failed">"登录失败"</string>
+</resources>
