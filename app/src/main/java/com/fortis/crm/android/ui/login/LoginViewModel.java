@@ -4,10 +4,8 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import android.util.Patterns;
-
-import com.fortis.crm.android.data.LoginRepository;
-import com.fortis.crm.android.data.Result;
+import com.fortis.crm.android.repository.LoginRepository;
+import com.fortis.crm.android.repository.Result;
 import com.fortis.crm.android.data.model.LoggedInUser;
 import com.fortis.crm.android.R;
 

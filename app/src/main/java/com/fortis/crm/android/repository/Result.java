@@ -1,10 +1,9 @@
-package com.fortis.crm.android.data;
+package com.fortis.crm.android.repository;
 
 /**
  * A generic class that holds a result success w/ data or an error exception.
  */
 public class Result<T> {
-    // hide the private constructor to limit subclass types (Success, Error)
     private Result() {
     }
 
@@ -15,7 +14,7 @@ public class Result<T> {
             return "Success[data=" + success.getData().toString() + "]";
         } else if (this instanceof Result.Error) {
             Result.Error error = (Result.Error) this;
-            return "Error[exception=" + error.getError().toString() + "]";
+            return "Error[exception=" + error.getErrorMessage() + "]";
         }
         return "";
     }
@@ -35,14 +34,26 @@ public class Result<T> {
 
     // Error sub-class
     public final static class Error extends Result {
-        private Exception error;
+        private String errorMessage;
+        private Exception exception;
 
-        public Error(Exception error) {
-            this.error = error;
+        public Error(String errorMessage) {
+            this.errorMessage = errorMessage;
         }
 
-        public Exception getError() {
-            return this.error;
+        public String getErrorMessage() {
+            return this.errorMessage;
         }
+        public void setException(Exception e){
+            this.exception = e;
+        }
+
+        public Exception getException() {
+            return exception;
+        }
+    }
+
+    public final static class Loading extends Result {
+        public Loading(){}
     }
 }

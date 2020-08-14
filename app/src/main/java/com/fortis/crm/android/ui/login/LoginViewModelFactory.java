@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.annotation.NonNull;
 
 import com.fortis.crm.android.data.LoginDataSource;
-import com.fortis.crm.android.data.LoginRepository;
+import com.fortis.crm.android.repository.LoginRepository;
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

@@ -4,23 +4,19 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
-import android.util.ArrayMap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.fortis.crm.android.R;
-import com.fortis.crm.android.ui.customer.dummy.Customer;
-
-import org.w3c.dom.Text;
+import com.fortis.crm.android.data.entity.Customer;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -52,11 +48,14 @@ public class CustomerRecyclerViewAdapter extends RecyclerView.Adapter<CustomerRe
         // 按拼音首字母排序
         if (customerList != null) {
             Collections.sort(customerList, (o1, o2) -> {
-                if (!o1.getCustomerNameFirstLetter().equals(o2.getCustomerNameFirstLetter())) {
-                    return o1.getCustomerNameFirstLetter().compareTo(o2.getCustomerNameFirstLetter());
-                } else {
-                    return o1.getCustomerNo().compareTo(o2.getCustomerNo());
-                }
+                // TODO 直接按首字母排序，首字母相同时未明确排序
+                return o1.getCustomerNameFirstLetter().compareTo(o2.getCustomerNameFirstLetter());
+
+//                if (!o1.getCustomerNameFirstLetter().equals(o2.getCustomerNameFirstLetter())) {
+//
+//                } else {
+//                    return o1.getCustomerNo().compareTo(o2.getCustomerNo());
+//                }
             });
             this.customerList.addAll(customerList);
         }
@@ -96,6 +95,18 @@ public class CustomerRecyclerViewAdapter extends RecyclerView.Adapter<CustomerRe
         holder.remarkView.setVisibility(View.GONE);
         holder.letterView.setVisibility(View.GONE);
 
+        // 设置点击事件
+        if (position == 0){
+            holder.mView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(holder.mView.getContext(),AddCustomerActivity.class);
+                    holder.mView.getContext().startActivity(intent);
+                }
+            });
+        }else {
+            holder.mView.setOnClickListener(null);
+        }
         // 设置操作项
         if (position == 0) {// 添加客户
             Drawable drawableLeft = ContextCompat.getDrawable(holder.contentView.getContext(), R.drawable.ic_add_customer);
@@ -110,9 +121,9 @@ public class CustomerRecyclerViewAdapter extends RecyclerView.Adapter<CustomerRe
         // 设置客户名称
         holder.contentView.setText(customer.getCustomerName());
         // 设置备注
-        if (!TextUtils.isEmpty(customer.getRemark())) {
+        if (!TextUtils.isEmpty(customer.getSource())) {
             holder.remarkView.setVisibility(View.VISIBLE);
-            holder.remarkView.setText(customer.getRemark());
+            holder.remarkView.setText(customer.getSource());
         }
     }
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_customer_label">添加客户</string>
+
+    <!-- 客户表单字段 -->
+    <string name="customer_no">客户号</string>
+    <string name="customer_name">客户名称</string>
+    <string name="customer_organization_code">客户组织机构代码</string>
+    <string name="source">客户来源</string>
+    <string name="organizationCertificatePeriod">组织机构代码证有效期</string>
+    <string name="endOrganizationCertificatePeriod">组织机构代码证有效期结束日</string>
+    <string name="businessLicenceNo">营业执照号</string>
+</resources>

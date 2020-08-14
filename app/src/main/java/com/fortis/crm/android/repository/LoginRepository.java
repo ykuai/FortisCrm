@@ -1,5 +1,6 @@
-package com.fortis.crm.android.data;
+package com.fortis.crm.android.repository;
 
+import com.fortis.crm.android.data.LoginDataSource;
 import com.fortis.crm.android.data.model.LoggedInUser;
 
 /**

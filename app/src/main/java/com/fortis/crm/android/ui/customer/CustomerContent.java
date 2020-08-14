@@ -1,4 +1,6 @@
-package com.fortis.crm.android.ui.customer.dummy;
+package com.fortis.crm.android.ui.customer;
+
+import com.fortis.crm.android.data.entity.Customer;
 
 import java.util.ArrayList;
 import java.util.HashMap;

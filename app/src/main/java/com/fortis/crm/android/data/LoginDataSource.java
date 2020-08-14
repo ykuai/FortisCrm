@@ -1,6 +1,7 @@
 package com.fortis.crm.android.data;
 
 import com.fortis.crm.android.data.model.LoggedInUser;
+import com.fortis.crm.android.repository.Result;
 
 import java.io.IOException;
 
@@ -17,7 +18,7 @@ public class LoginDataSource {
                     new LoggedInUser(username, "管理员");
             return new Result.Success<>(fakeUser);
         } catch (Exception e) {
-            return new Result.Error(new IOException("Error logging in", e));
+            return new Result.Error("Error logging in");
         }
     }
 

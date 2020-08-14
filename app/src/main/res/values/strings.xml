@@ -9,4 +9,14 @@
     <string name="invalid_username">账号不能为空</string>
     <string name="invalid_password">密码不能为空</string>
     <string name="login_failed">"登录失败"</string>
+
+    <!-- add customer-->
+    <string name="invalid_customer_name">"客户名称不能为空"</string>
+    <string name="invalid_customer_organization_code">"客户组织机构代码不能为空"</string>
+    <string name="invalid_customer_source">"客户来源不能为空"</string>
+    <string name="invalid_begin_organization_certificate_period">"起始日不能为空"</string>
+    <string name="invalid_end_organization_certificate_period">"结束日不能为空"</string>
+
+    <string name="button_submit">"提交"</string>
+    <string name="button_back">"取消"</string>
 </resources>

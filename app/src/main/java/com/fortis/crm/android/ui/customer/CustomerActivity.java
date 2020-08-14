@@ -14,6 +14,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 
 import com.fortis.crm.android.R;
 import com.king.view.slidebar.SlideBar;
@@ -26,7 +27,6 @@ public class CustomerActivity extends AppCompatActivity {
     CustomerViewModel customerViewModel;
     Toolbar myToolbar;
     RecyclerView customerRecyclerView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,4 +87,6 @@ public class CustomerActivity extends AppCompatActivity {
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         return true;
     }
+
+
 }

@@ -204,11 +204,11 @@ public class SlideBar extends View{
 
         int defaultWidth = getPaddingLeft() + w + getPaddingRight();
         int defaultHeight = getPaddingTop() + h * letters.length + getPaddingBottom();
-
+/*
         int width = measureHandler(widthMeasureSpec,defaultWidth);
-        int height = measureHandler(heightMeasureSpec,defaultHeight);
+        int height = measureHandler(heightMeasureSpec,defaultHeight);*/
 
-        setMeasuredDimension(width,height);
+        setMeasuredDimension(defaultWidth,defaultHeight);
     }
 
     private int measureHandler(int measureSpec,int defaultSize){
